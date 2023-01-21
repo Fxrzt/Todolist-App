@@ -1,70 +1,11 @@
-# Getting Started with Create React App
+# Getting Started with Todolist App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---------เริ่ม---------> เริ่มโปรแกรมจาก App.js อาเรย์ tasktodo จะถูกเพิ่มไปที่ Local Storage
 
-## Available Scripts
+-------เพิ่มข้อมูล------> พอเริ่มป้อนข้อมูล ข้อมูลจะเข้าไปที่ฟังก์ชัน inputChange จากนั้นเซ็ตค่า name เป็นค่าที่ได้จาก input เมื่อกดเพิ่มรายการ ต้องเช็คก่อนว่า name มีค่าไหม ถ้าไม่ใช่ให้เพิ่มค่าเข้าไปใน tasktodo ต่อหลังจากข้อมูลเก่า หลังจากนั้นก็จะเคลียร์ค่าใน input
 
-In the project directory, you can run:
+--------ลบข้อมูล------> กดลบข้อมูลก็จะไปที่ฟังก์ชัน onDeleteClick พร้อมส่งค่า id ข้อมูลที่ผู้ใช้กดลบ สร้างตัวแปรมารับค่าข้อมูลในอาเรย์ที่ id ไม่ซ้ำกับตัวที่ผู้ใช้กดลบ จากนั้น return ค่ากลับไปใน อาเรย์ tasktodo ค่าที่เหลือก็จะไม่มีข้อมูลที่กดลบ
 
-### `npm start`
+--------แก้ไขข้อมูล------> เมื่อกดคลิก แก้ไขข้อมูล ก็จะทำการเซ้ตค่าใน setOnClickEdit เป็น true เพื่อเปลี่ยน form ให้เป็นรูปแบบที่มีปุ่มอัพเดท ยกเลิก และ input และเซ็ตให้ nameUpdate มีค่าเป็น object ตัวที่ต้องการแก้ไข เมื่อป้อนค่าใน input พอค่าเปลี่ยนก็จะไปที่ฟังก์ชัน onEditInputChange เพื่อเซ็ตค่าใหม่ให้ nameUpdate เมื่อกดอัพเดท ก็จะไปที่ฟังก์ชัน onClickEditSubmit โดยจะเข้าไปต่อที่ onEditUpdate โดยจะส่งค่า nameUpdate.id,nameUpdate ไปด้วย สร้างตัวแปรมาเพื่อรับค่า อาเรย์ใหม่ที่ถ้า id ทั้งเก่าและใหม่เท่ากัน จะเปลี่ยนเป็นค่าใหม่ ถ้าไม่เท่ากันจะเป็นค่าเก่า จากนั้นเซ็ต setOnClickEdit เป็น false เพื่อกลับไป form อันแรก และ return อาเรย์ใหม่ไปที่ tasktodo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+--------เช็คลิสต์ว่าทำเสร็จแล้ว------> เมื่อเริ่มจะไม่ได้ติ้กถูกไว้เพราะเป็นไปตามค่า tasktodo.check เมื่อผู้ใช้คลิกค่าเปลี่ยนก็จะไปที่ฟังก์ชัน rightCheck ในฟังก์ชันก็จะทำการเซ็ตค่าเป็นตรงข้าม
