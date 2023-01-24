@@ -18,7 +18,7 @@
 }
 
 body{
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +70,10 @@ body{
   background-color: var(--color-primary);
 }
 
+.edit-container button:hover{
+  cursor: pointer;
+}
+
 .form-container{
   display: flex;
   align-items: center;
@@ -85,6 +89,7 @@ body{
   border-radius: 0.5rem;
   color: var(--color-white);
   background-color: var(--color-primary);
+  cursor: pointer;
 }
 
 .form-container input{
@@ -123,6 +128,10 @@ body{
   border-radius: 0.5rem;
   color: var(--color-white);
   background-color: var(--color-primary);
+}
+
+.edit-btn button:hover,.delete-btn button:hover{
+  cursor: pointer;
 }
 
 .todolist li{
